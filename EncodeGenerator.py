@@ -1,3 +1,4 @@
+#inporting libraries
 import cv2
 import face_recognition
 import pickle
@@ -39,6 +40,7 @@ def findEncodings(imagesList):
     encodeList = []
     for img in imagesList:
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        #to get only the id and not the extension i.e. 34456.png -> 34456
         encode = face_recognition.face_encodings(img)[0]
         encodeList.append(encode)
 
